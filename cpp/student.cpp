@@ -124,10 +124,10 @@ class Student : public Person {
       return "Nama : " + this->getName() + "\n" +
              "Umur : " + std::to_string(this->getAge()) + "\n" +
              "NPM : " + this->getNpm() + "\n" +
-             "Nilai Penguji 1 : " + std::to_string(this->getNilaiPenguji1()) +
-             "\n" + "Nilai Penguji 2 : " + std::to_string(this->getNilaiPenguji2()) +
-             "\n" + "Nilai Pembimbing : " + std::to_string(this->getNilaiPembimbing()) +
-             "\n" + "Nilai Akhir : " + std::to_string(this->getNilaiAkhir()) + "\n" +
+             "Nilai Penguji 1 : " + std::to_string(this->getNilaiPenguji1()) + "\n" +
+             "Nilai Penguji 2 : " + std::to_string(this->getNilaiPenguji2()) + "\n" +
+             "Nilai Pembimbing : " + std::to_string(this->getNilaiPembimbing()) + "\n" +
+             "Nilai Akhir : " + std::to_string(this->getNilaiAkhir()) + "\n" +
              "Status : " + this->getStatus() + "\n" +
              "Huruf Mutu : " + this->getHurufMutu();
     }
