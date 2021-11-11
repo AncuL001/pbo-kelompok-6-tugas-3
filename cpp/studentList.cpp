@@ -61,7 +61,7 @@ class StudentList {
       Student* temp = head;
       for (int i = 0; i < index - 1; temp = temp->next);
 
-      temp->next->next = newStudent->next;
+      newStudent->next = temp->next;
       temp->next = newStudent;
       return true;
     }
@@ -108,11 +108,48 @@ class StudentList {
       if (index == size - 1) return deleteLast();
 
       Student* temp = head;
-      for (int i = 0; i < index - 1; temp = temp->next);
+      for (int i = 0; i < index - 1; i++) temp = temp->next;
 
       Student* delStudent = temp->next;
       temp->next = delStudent->next;
       delStudent->next = nullptr;
       return delStudent;
+    }
+
+    template <typename F>
+    void forEach(F func) const {
+      for (auto temp = head; temp; temp = temp->next){
+        func(temp);
+      }
+    }
+
+    void printTable() {
+      printf("%-15s %-5s %-5s %-10s %-10s %-10s %-10s %-10s %-10s\n", 
+             "Nama", "Umur", "NPM", "Penguji1", "Penguji2", "Pembimbing", "NilaiAkhir", "NilaiMutu", "Status");
+      forEach([] (Student* s){
+        printf("%-15s %-5d %-5s %-10.2f %-10.2f %-10.2f %-10.2f %-10c %-10s\n", 
+                s->getName().c_str(), s->getAge(), s->getNpm().c_str(), s->getNilaiPenguji1(), s->getNilaiPenguji2(), s->getNilaiPembimbing(), s->getNilaiAkhir(), s->getHurufMutu(), s->getStatus().c_str());
+      });
+    }
+
+    void printFilteredTable(char sel, float nilai) {
+      printf("%-15s %-5s %-5s %-10s %-10s %-10s %-10s %-10s %-10s\n", 
+              "Nama", "Umur", "NPM", "Penguji1", "Penguji2", "Pembimbing", "NilaiAkhir", "NilaiMutu", "Status");
+      
+      if (sel == 1){
+        forEach([nilai] (Student* s){
+          if (s->getNilaiAkhir() > nilai)
+          printf("%-15s %-5d %-5s %-10.2f %-10.2f %-10.2f %-10.2f %-10c %-10s\n", 
+                  s->getName().c_str(), s->getAge(), s->getNpm().c_str(), s->getNilaiPenguji1(), s->getNilaiPenguji2(), s->getNilaiPembimbing(), s->getNilaiAkhir(), s->getHurufMutu(), s->getStatus().c_str());
+        });
+      }
+
+      else {
+        forEach([nilai] (Student* s){
+          if (s->getNilaiAkhir() < nilai)
+          printf("%-15s %-5d %-5s %-10.2f %-10.2f %-10.2f %-10.2f %-10c %-10s\n", 
+                  s->getName().c_str(), s->getAge(), s->getNpm().c_str(), s->getNilaiPenguji1(), s->getNilaiPenguji2(), s->getNilaiPembimbing(), s->getNilaiAkhir(), s->getHurufMutu(), s->getStatus().c_str());
+        });
+      }
     }
 };
