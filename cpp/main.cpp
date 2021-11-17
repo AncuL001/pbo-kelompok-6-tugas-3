@@ -1,3 +1,12 @@
+/*
+  Nama File : main.cpp
+  Nama      : Andaru Danurdara Wibisana, Fauzan Azmi Dwicahyo, Irfan Kamal, Muhammad Attila An Naufal
+  NPM       : 140810200020, 140810200030, 140810200032, 140810200048
+  Kelas     : B
+  Tanggal   : 17 November 2021
+  Deskripsi : Implementasi kasus linked list nilai sidang menggunakan C++, bagian main
+*********************************************/
+
 #include "studentList.cpp"
 
 void addDummyData(StudentList& list){
