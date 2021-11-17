@@ -60,14 +60,18 @@ public class StudentList {
     }
 
     public boolean insertOn(Student node, int position){
-        if(position < 0 || position >= this.size()){
+        if(!this.isNpmUnique(node)){
+            System.out.println("NPM sudah ada");
+            return false;
+        }
+        if(position < 0 || position > this.size()){
             return false;
         }
         if(position == 0){
             insertFirst(node);
             return true;
         }
-        if(position == this.size()){
+        if(position == this.size()-1){
             insertLast(node);
             return true;
         }
@@ -110,7 +114,7 @@ public class StudentList {
         if(position == 0){
             return deleteFirst();
         }
-        if(position == this.size()){
+        if(position == this.size()-1){
             return deleteLast();
         }
         Student current = head;
@@ -122,7 +126,7 @@ public class StudentList {
         return temp;
     }
 
-    public Student deleteByNPM(String npm){
+    public Student deleteByNpm(String npm){
         Student current = head;
         Student previous = null;
         while(current != null){
