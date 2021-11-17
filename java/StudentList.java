@@ -1,3 +1,11 @@
+/*
+  Nama File : StudentList.java
+  Nama      : Andaru Danurdara Wibisana, Fauzan Azmi Dwicahyo, Irfan Kamal, Muhammad Attila An Naufal
+  NPM       : 140810200020, 140810200030, 140810200032, 140810200048
+  Kelas     : B
+  Tanggal   : 17 November 2021
+  Deskripsi : Implementasi kasus linked list nilai sidang menggunakan Java, class Person dan Student
+*********************************************/
 public class StudentList {
     protected Student head;
 
@@ -59,7 +67,7 @@ public class StudentList {
         }
     }
 
-    public boolean insertOn(Student node, int position){
+    public boolean insertOn(int position, Student node){
         if(!this.isNpmUnique(node)){
             System.out.println("NPM sudah ada");
             return false;
