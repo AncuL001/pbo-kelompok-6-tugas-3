@@ -9,7 +9,17 @@ public class StudentList {
         return head == null;
     }
 
-    //size of linked list
+    public boolean isNpmUnique(Student data) {
+        Student current = head;
+        while (current != null) {
+            if (current.getNpm().equals(data.getNpm())) {
+                return false;
+            }
+            current = current.next;
+        }
+        return true;
+    }
+    
     public int size(){
         int count = 0;
         Student current = head;
@@ -20,26 +30,37 @@ public class StudentList {
         return count;
     }
 
-    public void insertFirst(Student node){
+    public boolean insertFirst(Student node){
+        if(!this.isNpmUnique(node)){
+            System.out.println("NPM sudah ada");
+            return false;
+        }
         node.next = head;
         head = node;
+        return true;
     }
 
-    public void insertLast(Student node){
+    public boolean insertLast(Student node){
+        if(!this.isNpmUnique(node)){
+            System.out.println("NPM sudah ada");
+            return false;
+        }
         Student current = head;
         if(current == null){
             head = node;
+            return true;
         }
         else{
             while(current.next != null){
                 current = current.next;
             }
             current.next = node;
+            return true;
         }
     }
 
     public boolean insertOn(Student node, int position){
-        if(position < 0 || position > this.size()){
+        if(position < 0 || position >= this.size()){
             return false;
         }
         if(position == 0){
@@ -99,6 +120,25 @@ public class StudentList {
         Student temp = current.next;
         current.next = current.next.next;
         return temp;
+    }
+
+    public Student deleteByNPM(String npm){
+        Student current = head;
+        Student previous = null;
+        while(current != null){
+            if(current.getNpm().equals(npm)){
+                if(previous == null){
+                    head = head.next;
+                }
+                else{
+                    previous.next = current.next;
+                }
+                return current;
+            }
+            previous = current;
+            current = current.next;
+        }
+        return null;
     }
 
     public void printTable(){
