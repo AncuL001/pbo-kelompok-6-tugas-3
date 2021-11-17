@@ -16,8 +16,7 @@ public class Main {
             System.out.println("2. Lihat tabel terfilter berdasarkan nilai");
             System.out.println("3. Tambah mahasiswa");
             System.out.println("4. Hapus mahasiswa");
-            System.out.println("5. Ubah data nilai");
-            if(course.empty()) System.out.println("6. Tambah data dummy");
+            if(course.empty()) System.out.println("5. Tambah data dummy");
             System.out.println("0. Keluar");
             System.out.print("Pilihan: ");
             int pilihan = Integer.parseInt(sc.nextLine());
@@ -30,9 +29,12 @@ public class Main {
                     filterMenu(course);
                     break;
                 case 3:
-                    course.deleteFirst();
+                    addMahasiswaMenu(course);
                     break;
-                case 6:
+                case 4:
+                    removeMahasiswaMenu(course);
+                    break;
+                case 5:
                     addDummyData(course);
                     break;
                 default:
@@ -44,6 +46,32 @@ public class Main {
 
     public static void addDummyData(StudentList list) {
         list.insertLast(new Student("Fauzan", 19, "0001", 80f, 82f, 90f));
+        list.insertLast(new Student("Attila", 29, "0001", 100f, 100f, 100f));
+        list.insertLast(new Student("Andaru", 20, "0003", 85f, 87f, 92f));
+        list.insertLast(new Student("Irfan", 19, "0004", 60f, 80f, 100f));
+    }
+
+    public static void addMahasiswaMenu(StudentList list) {
+        System.out.print("Nama Mahasiswa : ");
+        String nama = sc.nextLine();
+        System.out.print("Umur Mahasiswa : ");
+        int umur = Integer.parseInt(sc.nextLine());
+        System.out.print("NPM Mahasiswa : ");
+        String nim = sc.nextLine();
+        System.out.print("Nilai Penguji 1 : ");
+        float tugas = Float.parseFloat(sc.nextLine());
+        System.out.print("Nilai Penguji 2 : ");
+        float uts = Float.parseFloat(sc.nextLine());
+        System.out.print("Nilai Pembimbing : ");
+        float uas = Float.parseFloat(sc.nextLine());
+        Student s = new Student(nama, umur, nim, tugas, uts, uas);
+        if(!list.insertLast(s)) System.out.println("NPM tersebut sudah ada di daftar!");
+    }
+
+    public static void removeMahasiswaMenu(StudentList list){
+        System.out.print("NPM mahasiswa yang ingin dihapus : ");
+        String nim = sc.nextLine();
+        if(list.deleteByNpm(nim) == null) System.out.println("NPM tersebut tidak ada di daftar! Tidak ada yang dilakukan.");
     }
 
     public static void filterMenu(StudentList list){

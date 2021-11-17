@@ -40,7 +40,6 @@ public class StudentList {
 
     public boolean insertFirst(Student node){
         if(!this.isNpmUnique(node)){
-            System.out.println("NPM sudah ada");
             return false;
         }
         node.next = head;
@@ -50,7 +49,6 @@ public class StudentList {
 
     public boolean insertLast(Student node){
         if(!this.isNpmUnique(node)){
-            System.out.println("NPM sudah ada");
             return false;
         }
         Student current = head;
@@ -69,7 +67,6 @@ public class StudentList {
 
     public boolean insertOn(int position, Student node){
         if(!this.isNpmUnique(node)){
-            System.out.println("NPM sudah ada");
             return false;
         }
         if(position < 0 || position > this.size()){
