@@ -4,7 +4,7 @@
 #   NPM       : 140810200020, 140810200030, 140810200032, 140810200048
 #   Kelas     : B
 #   Tanggal   : 17 November 2021
-#   Deskripsi : Implementasi kasus nilai sidang dengan singly linked list menggunakan Python, class Student
+#   Deskripsi : Implementasi kasus linked list nilai sidang menggunakan C++, class Person dan Student
 # *********************************************/
 
 class Person:
