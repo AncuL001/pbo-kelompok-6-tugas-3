@@ -46,7 +46,7 @@ public class Main {
 
     public static void addDummyData(StudentList list) {
         list.insertLast(new Student("Fauzan", 19, "0001", 80f, 82f, 90f));
-        list.insertLast(new Student("Attila", 29, "0001", 100f, 100f, 100f));
+        list.insertLast(new Student("Attila", 29, "0002", 100f, 100f, 100f));
         list.insertLast(new Student("Andaru", 20, "0003", 85f, 87f, 92f));
         list.insertLast(new Student("Irfan", 19, "0004", 60f, 80f, 100f));
     }

@@ -1,0 +1,16 @@
+D:\Kuliahan\Semester3\PBO\Non Praktikum\Tugas\pbo-kelompok-6-tugas-3\csharp\bin\Debug\net5.0\csharp.exe
+D:\Kuliahan\Semester3\PBO\Non Praktikum\Tugas\pbo-kelompok-6-tugas-3\csharp\bin\Debug\net5.0\csharp.deps.json
+D:\Kuliahan\Semester3\PBO\Non Praktikum\Tugas\pbo-kelompok-6-tugas-3\csharp\bin\Debug\net5.0\csharp.runtimeconfig.json
+D:\Kuliahan\Semester3\PBO\Non Praktikum\Tugas\pbo-kelompok-6-tugas-3\csharp\bin\Debug\net5.0\csharp.runtimeconfig.dev.json
+D:\Kuliahan\Semester3\PBO\Non Praktikum\Tugas\pbo-kelompok-6-tugas-3\csharp\bin\Debug\net5.0\csharp.dll
+D:\Kuliahan\Semester3\PBO\Non Praktikum\Tugas\pbo-kelompok-6-tugas-3\csharp\bin\Debug\net5.0\ref\csharp.dll
+D:\Kuliahan\Semester3\PBO\Non Praktikum\Tugas\pbo-kelompok-6-tugas-3\csharp\bin\Debug\net5.0\csharp.pdb
+D:\Kuliahan\Semester3\PBO\Non Praktikum\Tugas\pbo-kelompok-6-tugas-3\csharp\obj\Debug\net5.0\csharp.csproj.AssemblyReference.cache
+D:\Kuliahan\Semester3\PBO\Non Praktikum\Tugas\pbo-kelompok-6-tugas-3\csharp\obj\Debug\net5.0\csharp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kuliahan\Semester3\PBO\Non Praktikum\Tugas\pbo-kelompok-6-tugas-3\csharp\obj\Debug\net5.0\csharp.AssemblyInfoInputs.cache
+D:\Kuliahan\Semester3\PBO\Non Praktikum\Tugas\pbo-kelompok-6-tugas-3\csharp\obj\Debug\net5.0\csharp.AssemblyInfo.cs
+D:\Kuliahan\Semester3\PBO\Non Praktikum\Tugas\pbo-kelompok-6-tugas-3\csharp\obj\Debug\net5.0\csharp.csproj.CoreCompileInputs.cache
+D:\Kuliahan\Semester3\PBO\Non Praktikum\Tugas\pbo-kelompok-6-tugas-3\csharp\obj\Debug\net5.0\csharp.dll
+D:\Kuliahan\Semester3\PBO\Non Praktikum\Tugas\pbo-kelompok-6-tugas-3\csharp\obj\Debug\net5.0\ref\csharp.dll
+D:\Kuliahan\Semester3\PBO\Non Praktikum\Tugas\pbo-kelompok-6-tugas-3\csharp\obj\Debug\net5.0\csharp.pdb
+D:\Kuliahan\Semester3\PBO\Non Praktikum\Tugas\pbo-kelompok-6-tugas-3\csharp\obj\Debug\net5.0\csharp.genruntimeconfig.cache
