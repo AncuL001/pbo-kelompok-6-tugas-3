@@ -14,6 +14,17 @@ class StudentList {
       return head == nullptr;
     }
 
+    bool isNpmUnique(Student* data) {
+      Student* current = head;
+      while (current != nullptr) {
+        if (current->getNpm() == data->getNpm()) {
+          return false;
+        }
+        current = current->next;
+      }
+      return true;
+    }
+
     int size() {
       if (empty()) return 0;
 
@@ -22,7 +33,11 @@ class StudentList {
       return i;
     }
 
-    void insertFirst(Student* newStudent) {
+    bool insertFirst(Student* newStudent) {
+      if(!this->isNpmUnique(newStudent)){
+        return false;
+      }
+
       if (empty()){
         head = newStudent;
       }
@@ -30,9 +45,14 @@ class StudentList {
         newStudent->next = head;
         head = newStudent;
       }
+      return true;
     }
 
-    void insertLast(Student* newStudent) {
+    bool insertLast(Student* newStudent) {
+      if(!this->isNpmUnique(newStudent)){
+        return false;
+      }
+
       if (empty()){
         head = newStudent;
       }
@@ -41,12 +61,17 @@ class StudentList {
         while (temp->hasNext()) temp = temp->next;
         temp->next = newStudent;
       }
+      return true;
     }
 
     // mengembalikan false jika gagal (array indeks out of bound)
     bool insertOn(int index, Student* newStudent) {
       int size = this->size();
       if (index < 0 || index >= size) return false;
+
+      if(!this->isNpmUnique(newStudent)){
+        return false;
+      }
 
       if (index == 0) {
         insertFirst(newStudent);
@@ -123,13 +148,31 @@ class StudentList {
       }
     }
 
+    Student* deleteByNpm(std::string npm) {
+      Student* current = head;
+      Student* previous = nullptr;
+
+      while (current != nullptr){
+        if (current->getNpm() == npm) {
+          if (previous == nullptr) head = head->next;
+          else previous->next = current->next;
+
+          return current;
+        }
+        previous = current;
+        current = current->next;
+      }
+
+      return nullptr;
+    }
+
     void printTable() {
       printf("%-15s %-5s %-5s %-10s %-10s %-10s %-10s %-10s %-10s\n", 
              "Nama", "Umur", "NPM", "Penguji1", "Penguji2", "Pembimbing", "NilaiAkhir", "NilaiMutu", "Status");
-      forEach([] (Student* s){
+      for (auto s = head; s; s = s->next){
         printf("%-15s %-5d %-5s %-10.2f %-10.2f %-10.2f %-10.2f %-10c %-10s\n", 
                 s->getName().c_str(), s->getAge(), s->getNpm().c_str(), s->getNilaiPenguji1(), s->getNilaiPenguji2(), s->getNilaiPembimbing(), s->getNilaiAkhir(), s->getHurufMutu(), s->getStatus().c_str());
-      });
+      };
     }
 
     void printFilteredTable(char sel, float nilai) {
@@ -137,19 +180,19 @@ class StudentList {
               "Nama", "Umur", "NPM", "Penguji1", "Penguji2", "Pembimbing", "NilaiAkhir", "NilaiMutu", "Status");
       
       if (sel == 1){
-        forEach([nilai] (Student* s){
+        for (auto s = head; s; s = s->next){
           if (s->getNilaiAkhir() > nilai)
-          printf("%-15s %-5d %-5s %-10.2f %-10.2f %-10.2f %-10.2f %-10c %-10s\n", 
-                  s->getName().c_str(), s->getAge(), s->getNpm().c_str(), s->getNilaiPenguji1(), s->getNilaiPenguji2(), s->getNilaiPembimbing(), s->getNilaiAkhir(), s->getHurufMutu(), s->getStatus().c_str());
-        });
+            printf("%-15s %-5d %-5s %-10.2f %-10.2f %-10.2f %-10.2f %-10c %-10s\n", 
+                    s->getName().c_str(), s->getAge(), s->getNpm().c_str(), s->getNilaiPenguji1(), s->getNilaiPenguji2(), s->getNilaiPembimbing(), s->getNilaiAkhir(), s->getHurufMutu(), s->getStatus().c_str());
+        };
       }
 
       else {
-        forEach([nilai] (Student* s){
+        for (auto s = head; s; s = s->next){
           if (s->getNilaiAkhir() < nilai)
-          printf("%-15s %-5d %-5s %-10.2f %-10.2f %-10.2f %-10.2f %-10c %-10s\n", 
-                  s->getName().c_str(), s->getAge(), s->getNpm().c_str(), s->getNilaiPenguji1(), s->getNilaiPenguji2(), s->getNilaiPembimbing(), s->getNilaiAkhir(), s->getHurufMutu(), s->getStatus().c_str());
-        });
+            printf("%-15s %-5d %-5s %-10.2f %-10.2f %-10.2f %-10.2f %-10c %-10s\n", 
+                    s->getName().c_str(), s->getAge(), s->getNpm().c_str(), s->getNilaiPenguji1(), s->getNilaiPenguji2(), s->getNilaiPembimbing(), s->getNilaiAkhir(), s->getHurufMutu(), s->getStatus().c_str());
+        };
       }
     }
 };

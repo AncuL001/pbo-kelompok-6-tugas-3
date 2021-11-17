@@ -2,7 +2,7 @@
 
 void addDummyData(StudentList& list){
   list.insertLast(new Student("Fauzan", 19, "0001", 80, 82, 90));
-  list.insertLast(new Student("Attila", 29, "0002", 100, 100, 100));
+  list.insertLast(new Student("Attila", 29, "0001", 100, 100, 100));
   list.insertLast(new Student("Andaru", 20, "0003", 85, 87, 92));
   list.insertLast(new Student("Irfan", 19, "0004", 60, 80, 100));
 }
@@ -40,7 +40,7 @@ void addMahasiswaMenu(StudentList& list){
   std::cin >> nilaiPembimbing;
 
   if (!list.insertLast(new Student(name, age, npm, nilaiPenguji1, nilaiPenguji2, nilaiPembimbing)))
-    std::cout << "NPM tersebut sudah ada di daftar!";
+    std::cout << "NPM tersebut sudah ada di daftar!\n";
 }
 
 void removeMahasiswaMenu(StudentList& list){
