@@ -50,10 +50,11 @@ namespace csharp
         }
 
         public static void addDummyData(StudentList list) {
-            list.insertLast(new Student("Fauzan", 19, "0001", 80f, 82f, 90f));
-            list.insertLast(new Student("Attila", 29, "0002", 43f, 67f, 70f));
-            list.insertLast(new Student("Andaru", 20, "0003", 85f, 87f, 92f));
-            list.insertLast(new Student("Irfan", 19, "0004", 60f, 80f, 100f));
+            list.insertLast(new Student("Fauzan", 19, "0001", 80, 82, 90));
+            list.insertFirst(new Student("Attila", 29, "0006", 100, 100, 100));
+            list.insertLast(new Student("Andaru", 20, "0003", 85, 87, 92));
+            list.insertLast(new Student("Irfan", 19, "0004", 60, 80, 100));
+            list.insertOn(1, new Student("Intan", 19, "0002", 80, 75, 90));
         }
 
         public static void addMahasiswaMenu(StudentList list) {
